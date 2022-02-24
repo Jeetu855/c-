@@ -1,97 +1,102 @@
 #include <iostream>
-#include <string>
-#include <vector>
+#include <stdlib.h>
+
 using namespace std;
 
-class Array
+class Shallow
 {
 private:
-    int *arr;
-    int length;
-    int size;
+    int *data;
 
 public:
-    Array(int length, int size);
-    void append(int x);
-    ~Array();
-    void get_length()
-    {
-        cout << length << "\n";
-    };
-    void get_size()
-    {
-        cout << size << "\n";
-    }
-    void display();
-    void insert(int index, int x);
-    void del(int index);
+    Shallow(int d);
+    Shallow(const Shallow &source);
+    ~Shallow();
 };
 
-Array::Array(int length, int size) : length{length}, size{size}
+Shallow::Shallow(int d)
 {
-    arr = new int[size];
-    for (size_t i = 0; i < length; i++)
-        arr[i] = i + 1;
+    data = new int;
+    *data = d;
+    cout << "Shallow class constructor for : " << d << "\n";
 }
 
-void Array::append(int x)
+Shallow::Shallow(const Shallow &source)
 {
-    if (length < size)
+    data = new int;
+    data = source.data;
+    cout << "Shallow class shallow copy constructor for : " << *data << "\n";
+}
+
+Shallow::~Shallow()
+{
+    cout << "Shallow class destructor Freeing data for : " << *data << "\n";
+    delete data;
+}
+
+class Deep
+{
+private:
+    int *data;
+
+public:
+    Deep(int d);
+    Deep(const Deep &source);
+    ~Deep();
+};
+
+Deep::Deep(int d)
+{
+    data = new int;
+    *data = d;
+    cout << "Deep class constructor for : " << d << "\n";
+}
+
+Deep::Deep(const Deep &source)
+{
+    data = new int;
+    *data = (*source.data);
+    cout << "Deep class Deep copy constructor for : " << *data << "\n";
+}
+
+Deep::~Deep()
+{
+    cout << "Deep class destructor Freeing data for : " << *data << "\n";
+    delete data;
+}
+
+class Base
+{
+    int a;
+
+public:
+    Base(int val)
     {
-        arr[length] = x;
+        a = val;
     }
-    length++;
-}
+};
 
-Array::~Array()
+class Derived : public Base
 {
-    delete[] arr;
-}
+    int b;
 
-void Array::display()
-{
-    for (size_t i = 0; i < length; i++)
-        cout << arr[i] << " ";
-}
+public:
+    Derived(int val);
+};
 
-void Array::insert(int index, int x)
+Derived::Derived(int val) : Base{val * 2}
 {
-    if (length < size && index >= 0)
-    {
-        for (size_t i = length; i > index; i--)
-            arr[i] = arr[i - 1];
-    }
-    arr[index] = x;
-    length++;
-}
-
-void Array::del(int index)
-{
-    int x{}, i{};
-    if (index >= 0 && index < length)
-    {
-        for (i = index; i < length - 1; i++)
-        {
-            arr[i] = arr[i + 1];
-        }
-        length--;
-    }
+    b = val;
 }
 
 int main()
 {
-    Array arr1{5, 10};
-    arr1.display();
-    cout << "\n";
-    // arr1.get_length();
-    // arr1.append(9);
-    // arr1.display();
-    // cout << "\n";
-    // arr1.get_length();
-    arr1.insert(2, 11);
-    arr1.display();
-    cout << "\n";
-    arr1.del(2);
-    arr1.display();
+    // Shallow s1 = 10;
+    // Deep d1(10);
+
+    // Shallow s2(s1);
+    // Deep d2(d1);
+
+    // Derived d1(10);
     return 0;
 }

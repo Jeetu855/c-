@@ -188,11 +188,11 @@ Derived::~Derived()
 
 int main()
 {
-    // Shallow s1{10};
-    // Shallow s2{s1};
+    Shallow s1{10};
+    Shallow s2{s1};
 
-    // Deep d1{10};
-    // Deep d2{d1};
+    Deep d1{10};
+    Deep d2{d1};
 
     vector<Move> vec;
     vec.push_back(Move(10));
