@@ -8,7 +8,7 @@ int main(){
 
     // num1 =100; //assigning, value on rhs sent to  location of lhs, associate right to left
 
-    //  % modulo operator only works with integers, give remainder of division
+    //*  % modulo operator only works with integers, give remainder of division
     // + - / * are overloaded which mean they can be used with int floats doubles
 
     // int num2 {200};

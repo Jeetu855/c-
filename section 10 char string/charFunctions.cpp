@@ -14,7 +14,7 @@ int main(){
     // ******* other functions
     // isspace(c), isupper(c) , islower(c)
 
-    // concersion functions**************************
+    // conversion functions**************************
     // tolower(c),toupper(c)
     return 0;
 }

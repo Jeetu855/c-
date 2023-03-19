@@ -6,7 +6,7 @@ int main(){
     // c++ operations occur on operands with same data type,if the data type doesnt match
     // c++ converts one of them. If conversion not possible a compiler error will occur
 
-    // lower types can be converted to higher but higher types cannot be converted to lower types
+    //* lower types can be converted to higher but higher types cannot be converted to lower types
     // eg int can be converted to long double etc
     // Promotion :convertion/coercion to higher type , Demotion :conversion/coercion to lower type
 
@@ -43,7 +43,7 @@ int main(){
     // ! not it is unary operator (eg !a) , && and , || or both "and" and "or" are binary
     // Order of precedence ! > && > ||
 
-    // short circuit evaluation eg1:exp1 &&exp2 && exp3 if first condition is false, it wont 
+    // short circuit evaluation eg1:exp1 && exp2 && exp3 if first condition is false, it wont 
     // bother checking 2nd and 3rd condition 
     // eg2:exp1 || exp2|\ exp 3 ,if first condition true it wont check other conditions
 

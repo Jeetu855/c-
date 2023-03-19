@@ -10,9 +10,9 @@ int main(){
     // vector<int> test_scores  {100,98,91,78,81};
 
     // vector<double> high_temp(365,80); //365 is size of vector and all values initialised to 80;
-    // vector have1)dynamic size ,2)sotred contiguously in memory
-    //3) provide functions for bounds check 4)elements automatically initialsed to zero
-    // 5)object oriented containers defined in stl library
+    //* vector have1)dynamic size ,2)sotred contiguously in memory
+    //*3) provide functions for bounds check 4)elements automatically initialsed to zero
+    //*5)object oriented containers defined in stl library
     //use []subscript like array to get individual element 
     // Acces individual elements
 
@@ -24,7 +24,7 @@ int main(){
     // to change value;
     // test_scores.at(2)=50;
     // cout<<test_scores.at(2)<<endl;
-
+    // * .at() method of vector class performs bounds checking
     // to add new element
     // test_scores.push_back(80);
     // cout<<test_scores.at(5)<<endl;

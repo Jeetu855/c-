@@ -1,19 +1,26 @@
-#include<iostream>
-#include<cstring>
-#include<string>
+#include <iostream>
+#include <cstring>
+#include <string>
 
 using namespace std;
 
-int main(){
+int main()
+{
+    // ! Array vs Vector same as C-style string vs C++-style string,just vector and c++ string are classes
     // C string***********************************************
+
     // sequence of char, stored contiguously in memory,implemened as array of characters
     // terminated by a null character(\0)(NULL)character with a value of zero,null character sets all bits to zero
     // string litarals are constant
 
-    // char my_name[]{"Jitesh"};//length 6,last character at 6 coz start from 0 and coz 1 space for null character;
+    char my_name[7]{"Jitesh"}; // length 7,last character at 6 coz start from 0 and coz 1 space for null character;
+    // ! in above eg, need to put length 7 coz 6 char and 1 null char , putting length 6 will throw an error
+    //! but when finding actual length it will be 6 coz length of null char not included in strlen()
+    // !also printing name of array of char returns a string while printing
+    // ! name of an array of int or float or double returns address of first element
     // cout<<my_name[5];
     // cout<<"\n"<<my_name[6];
-    // my_name[3]='x';// this is not possible since array value const
+    // my_name[3]='x';// this is not possible
 
     // however  lets take another eg:********
     // char name[8]{"Jitesh"};
@@ -23,29 +30,28 @@ int main(){
     // cout<<name[6]<<endl;
     // name[6]='S';
     // cout<<name[6]<<endl;
-
+    // !c-style string literal dont work with + sign, need to use strcpy
     // **************
     // char name[8];
-    // name="Jitesh";// not allowed****** dont run this code
+    // name="Jitesh";//! not allowed****** dont run this code
     // we have too use a method called strcpy(string copy)
 
     // strcpy(name,"Jitesh");// this is ok
 
-    // nul character very imp, eg to count length of string
+    // null character very imp, eg to count length of string
     // the counting stops when compiler reaches null character
 
     // char str[50];
     // strcpy(str,"Hello ");
     // strcat(str,"World");//concatenate
-    
-    // cout<<strlen(str)<<endl;// length 11 as there is space after hello
 
+    // cout<<strlen(str)<<endl;// length 11 as there is space after hello
+    // ! strlen(does not count null char)
     // char full_name[50]{};
     // cout<<"Enter full name"<<endl;
     // cin>>full_name;
     // cout<<"Your full name is "<<full_name; //this wont print complete Jitesh Shamdasani coz
-    //as soon as int encounter " "between the name it stops so for that we need to use
-
+    // as soon as int encounter " "between the name it stops so for that we need to use
 
     // char full_name[50]{};
     // cout<<"Enter full name"<<endl;
@@ -53,10 +59,10 @@ int main(){
     //  cout<<"Your full name is "<<full_name;
     //  strcmp(first val to compare,second val to compare) string compare, gives difference output 0 if same
 
-
     // C++ string ********************************************************
+    // *contiguous in mem, dynamic size, can be converted to c-style string,provides bounds check
 
-    // string s1;// automatically initialized to 0
+    // string s1;// automatically initialized to 0 like vector vs array
     // string s2{"Jitesh"};
     // string s3{"Jitesh",3};//Jit
     // string s4(3,'J');//JJJ
@@ -80,7 +86,7 @@ int main(){
     // string s3{"Kiwi"};
     // string s4{"apple"};
     // string s5{s1};
-    
+
     // bool a1= (s1==s5);
     // cout<<a1<<endl;
 
@@ -104,10 +110,10 @@ int main(){
     // cout<<s1<<endl;
 
     string s1;
-    cout<<"enter full name"<<endl;
-    getline(cin,s1);// take input until new line
-    cout<<s1<<endl;
-   
+    cout << "enter full name" << endl;
+    getline(cin, s1); // *take input until new line
+    cout << s1 << endl;
+    cout << s1.length() << "\n";
 
     return 0;
 }

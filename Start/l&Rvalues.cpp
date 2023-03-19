@@ -9,7 +9,7 @@ using namespace std;
 // void getVal(int &&val){ //*function only takes r_values(overloaded)
 //     cout<<val<<endl;
 // };
-// can be ovrloaded
+// *can be ovrloaded
 void getVal(const int &val)
 { //*function takes both  l_values and r_values
     cout << val << endl;
