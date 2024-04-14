@@ -1,10 +1,11 @@
-#include<iostream>
-#include<vector>
-#include<string>
+#include <iostream>
+#include <vector>
+#include <string>
 
 using namespace std;
-void double_data(int *int_ptr); //function taking a poinyer as a parameter
-int main(){
+void double_data(int *int_ptr); // function taking a poinyer as a parameter
+int main()
+{
     // int score{100};
     // int *score_ptr{&score};
     // cout<<score<<endl;
@@ -14,7 +15,7 @@ int main(){
 
     // ***Returning pointer from a function**
 
-    // name of function preceedes with a * eg: int(return type) *largestInt(function name)(parameters)
+    // name of function preceedes with a * eg: int* largestInt(function name)(parameters)
 
     // **pointer pitfalls 1)uninitialised ptr
     // 2)dangling pointers: point to memory thats no longer valid
@@ -23,7 +24,7 @@ int main(){
     // **Refrence**
 
     // int num{100};
-    // int &ref{num}; //refis alias to num
+    // int &ref{num}; //ref is alias to num
     // cout<<num<<endl;
     // cout<<ref<<endl;//& its like ptr which is referenced and derefrenced automtically behind the scenes
     // num=200;
@@ -44,7 +45,7 @@ int main(){
     // }
 
     // for(auto &name:stoges){ //thiss will change since pass by ref and not by value
-    //     name="Funny"; 
+    //     name="Funny";
     // }
 
     //  for(auto name:stoges){ //names changed to funny
@@ -57,7 +58,9 @@ int main(){
 
     return 0;
 }
-void double_data(int *int_ptr){ //passing the pointer
-    *int_ptr *=2; //first we r derefrencing the ptr then multiplying by 2
-    cout<<"\n"<<*int_ptr; //o/p 200
+void double_data(int *int_ptr)
+{                  // passing the pointer
+    *int_ptr *= 2; // first we r derefrencing the ptr then multiplying by 2
+    cout << "\n"
+         << *int_ptr; // o/p 200
 }
