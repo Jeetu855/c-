@@ -47,7 +47,7 @@ int main()
 }
 
 // !dynamic allocation means allocating memory during run time rather than on compile time which is the usual case
-// !when we call int *x=&a; when the code is compiled it allocates required bytes for the pointer and stores tehe value in it
+// !when we call int *x=&a; when the code is compiled it allocates required bytes for the pointer and stores the value in it
 // !now eg:cin>>size; int *y=a[size];this wont work coz size of the array depends on user input provided which is done during run time
 // !but size needs to be provided beforehand to execute this
 // !to overcome this we use int *z=new int[size] which allocates size during runtime on the heap storage area

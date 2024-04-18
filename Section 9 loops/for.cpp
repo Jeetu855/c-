@@ -1,14 +1,14 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-int main(){
+int main()
+{
     // for(inititalisation;condition;increment)
     // for(int i{0};i<=10;i++){
     //     cout<<i<<"\n";
     // }
-
 
     // for(int i{1};i<=30;i++){
     //     if(i%2==0){
@@ -38,9 +38,10 @@ int main(){
 
     // }
 
-    vector<float> nums {5,11,11,15,26,78,98};
-    for(auto num:nums){
-        cout<<num<<endl;
+    vector<float> nums{5, 11, 11, 15, 26, 78, 98};
+    for (auto num : nums)
+    {
+        cout << num << endl;
     }
     return 0;
 }

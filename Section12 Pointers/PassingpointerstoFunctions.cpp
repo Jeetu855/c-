@@ -3,7 +3,7 @@
 #include <string>
 
 using namespace std;
-void double_data(int *int_ptr); // function taking a poinyer as a parameter
+void double_data(int *int_ptr); // function taking a pointer as a parameter
 int main()
 {
     // int score{100};
@@ -44,7 +44,7 @@ int main()
     //     cout<<name<<endl;
     // }
 
-    // for(auto &name:stoges){ //thiss will change since pass by ref and not by value
+    // for(auto &name:stoges){ //this will change since pass by ref and not by value
     //     name="Funny";
     // }
 
@@ -53,7 +53,7 @@ int main()
     // }
 
     // **L-values and R-values
-    // lvalues :1)values that have nnames and are addressable,2)modifiale if they are not constant,3)occupies location in memory
+    // lvalues :1)values that have names and are addressable,2)modifiale if they are not constant,3)occupies location in memory
     // r-vals are literals like :100,"Jitesh" etc
 
     return 0;

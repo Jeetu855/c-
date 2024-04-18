@@ -7,22 +7,25 @@ using namespace std;
 int main()
 {
     // ! Array vs Vector same as C-style string vs C++-style string,just vector and c++ string are classes
-    // C string***********************************************
+    //*************************** C string***********************************************
 
-    // sequence of char, stored contiguously in memory,implemened as array of characters
-    // terminated by a null character(\0)(NULL)character with a value of zero,null character sets all bits to zero
-    // string litarals are constant
+    //* sequence of char, stored contiguously in memory,implemened as array of characters
+    //* terminated by a null character(\0)(NULL)character with a value of zero,null character sets all bits to zero
+    //* string litarals are constant, often called null terminated strings
 
-    char my_name[7]{"Jitesh"}; // length 7,last character at 6 coz start from 0 and coz 1 space for null character;
-    // ! in above eg, need to put length 7 coz 6 char and 1 null char , putting length 6 will throw an error
-    //! but when finding actual length it will be 6 coz length of null char not included in strlen()
-    // !also printing name of array of char returns a string while printing
-    // ! name of an array of int or float or double returns address of first element
-    // cout<<my_name[5];
-    // cout<<"\n"<<my_name[6];
-    // my_name[3]='x';// this is not possible
+    char my_name[7]{"Jitesh"};
+    //* length 7,last character at 6 coz start from 0 and coz 1 space for null character;
+    //! in above eg, need to put length 7 coz 6 char and 1 null char , putting length 6 will throw an error
+    //! but when using strlen() it will be 6 coz length of null char not included in strlen()
+    //! also printing name of array of char returns a string while printing
+    //! name of an array of int or float or double returns address of first element
 
-    // however  lets take another eg:********
+    cout << my_name << "\n";
+    cout << strlen(my_name) << "\n";
+    cout << my_name[6] << "\n";
+
+    // my_name[3]='x';//! this is not possible as c style strings are immutable
+    // however  lets take another eg:
     // char name[8]{"Jitesh"};
     // first 5 value have characters stored, but next all 3 are null
     // so we can change [6] and [7] in this case
@@ -36,7 +39,7 @@ int main()
     // name="Jitesh";//! not allowed****** dont run this code
     // we have too use a method called strcpy(string copy)
 
-    // strcpy(name,"Jitesh");// this is ok
+    //* strcpy(name,"Jitesh");// this is ok
 
     // null character very imp, eg to count length of string
     // the counting stops when compiler reaches null character
@@ -51,13 +54,13 @@ int main()
     // cout<<"Enter full name"<<endl;
     // cin>>full_name;
     // cout<<"Your full name is "<<full_name; //this wont print complete Jitesh Shamdasani coz
-    // as soon as int encounter " "between the name it stops so for that we need to use
+    // as soon as it encounter " " between the name it stops so for that we need to use
 
     // char full_name[50]{};
     // cout<<"Enter full name"<<endl;
-    // cin.getline(full_name,50);// name of variable and length it can take as input
+    // cin.getline(full_name,50);//* name of variable and length it can take as input
     //  cout<<"Your full name is "<<full_name;
-    //  strcmp(first val to compare,second val to compare) string compare, gives difference output 0 if same
+    //  strcmp(first val to compare,second val to compare) string compare, gives output 0 if same
 
     // C++ string ********************************************************
     // *contiguous in mem, dynamic size, can be converted to c-style string,provides bounds check
