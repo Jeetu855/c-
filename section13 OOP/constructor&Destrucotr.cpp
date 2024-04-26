@@ -24,7 +24,7 @@ public:
     Player::Player(string name_val, int health_val, int xp_val) : name{name_val}, health{health_val}, xp{xp_val} {};
     //*order in initilisor list dosent matter, it will depend on how we declared method
 
-    ~Player(); //** destructor
+    ~Player(); //** destructor  : cannot be overloaded
     //**called when object goes out of scope or we delete pointer to object
     // destructor called
 };
